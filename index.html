@@ -1,0 +1,166 @@
+<html>
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a0a45;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #0a0a45;
+        }
+        .left {
+            flex: 1;
+            background-image: url('https://i.ytimg.com/vi/vkdD3B5arls/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+        .right h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .right label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .right input[type="text"],
+        .right input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        .right input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .right .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .right .btn:hover {
+            background-color: #0056b3;
+        }
+        .right .link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .right .link:hover {
+            text-decoration: underline;
+        }
+        .right .terms {
+            font-size: 0.8em;
+            color: #a0a0a0;
+        }
+        .right .terms a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .right .terms a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function startForms() {
+            var age = document.getElementById('age').value;
+            document.body.innerHTML = `
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Questionnaire</h2>
+                        <p>Age: ${age}</p>
+                        <label for="question1">Question 1: What is the capital of France?</label>
+                        <input type="text" id="question1" name="question1">
+                        <label for="question2">Question 2: Who wrote 'To Kill a Mockingbird'?</label>
+                        <input type="text" id="question2" name="question2">
+                        <label for="question3">Question 3: What is the largest planet in our solar system?</label>
+                        <input type="text" id="question3" name="question3">
+                        <button class="btn" onclick="nextPage1()">Next</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function nextPage1() {
+            document.body.innerHTML = `
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Questionnaire</h2>
+                        <label for="question4">Question 4: What is the chemical symbol for water?</label>
+                        <input type="text" id="question4" name="question4">
+                        <label for="question5">Question 5: Who painted the Mona Lisa?</label>
+                        <input type="text" id="question5" name="question5">
+                        <label for="question6">Question 6: What is the smallest country in the world?</label>
+                        <input type="text" id="question6" name="question6">
+                        <button class="btn" onclick="nextPage2()">Next</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function nextPage2() {
+            document.body.innerHTML = `
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Questionnaire</h2>
+                        <label for="question7">Question 7: What is the speed of light?</label>
+                        <input type="text" id="question7" name="question7">
+                        <label for="question8">Question 8: Who discovered penicillin?</label>
+                        <input type="text" id="question8" name="question8">
+                        <label for="question9">Question 9: What is the tallest mountain in the world?</label>
+                        <input type="text" id="question9" name="question9">
+                        <button class="btn" onclick="submitQuestionnaire()">Submit</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function submitQuestionnaire() {
+            alert("Questionnaire submitted!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Sign in</h2>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="0">
+            <div>
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+            <button class="btn" onclick="startForms()">Start Forms</button>
+            <p class="terms">By click on "Start Forms" you agree to <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+</body>
+</html>
