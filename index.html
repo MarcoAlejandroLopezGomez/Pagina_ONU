@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Sign In</title>
+    <title>Registrate</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
@@ -48,9 +48,6 @@
             border: none;
             border-radius: 5px;
         }
-        .right input[type="checkbox"] {
-            margin-right: 10px;
-        }
         .right .btn {
             background-color: #007bff;
             color: white;
@@ -85,13 +82,13 @@
     </style>
     <script>
         function startForms() {
-            var age = document.getElementById('age').value;
+            var age = document.getElementById('edad').value;
             document.body.innerHTML = `
                 <div class="container">
                     <div class="left"></div>
                     <div class="right">
                         <h2>Questionnaire</h2>
-                        <p>Age: ${age}</p>
+                        <p>Edad: ${age}</p>
                         <label for="question1">Question 1: What is the capital of France?</label>
                         <input type="text" id="question1" name="question1">
                         <label for="question2">Question 2: Who wrote 'To Kill a Mockingbird'?</label>
@@ -149,17 +146,13 @@
     <div class="container">
         <div class="left"></div>
         <div class="right">
-            <h2>Sign in</h2>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-            <label for="age">Age</label>
-            <input type="number" id="age" name="age" min="0">
-            <div>
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember Me</label>
-            </div>
-            <button class="btn" onclick="startForms()">Start Forms</button>
-            <p class="terms">By click on "Start Forms" you agree to <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+            <h2>Registrate</h2>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" min="0">
+            <button class="btn" onclick="startForms()">Iniciar Examen</button>
+            <p class="terms">¿Alguna duda? Contactanos o visita nuestro <a href="https://sites.google.com/d/1mQtmyprQxHqnBeRqm5x-IiGUkIRkD_6O/p/1D9PS-yY9EqLEr1WWDNHlsqFTyXWSV1w0/edit">centro de ayuda</a></p>
         </div>
     </div>
 </body>
