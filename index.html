@@ -82,63 +82,114 @@
     </style>
     <script>
         function startForms() {
-            var age = document.getElementById('edad').value;
+            var age = parseInt(document.getElementById('edad').value);
+            let questionsHtml = "";
+
+            if (age >= 5 && age <= 7) {
+                questionsHtml += `
+                    <h2>Español (5-7 años)</h2>
+                    <label for="question1">Pregunta 1: ¿Cuántas letras tiene la palabra "sol"?</label>
+                    <input type="text" id="question1" name="question1">
+                    <label for="question2">Pregunta 2: ¿Cuál es la primera letra del abecedario?</label>
+                    <input type="text" id="question2" name="question2">
+                    <button class="btn" onclick="nextMath5to7()">Siguiente</button>
+                `;
+            } else if (age >= 8 && age <= 10) {
+                questionsHtml += `
+                    <h2>Español (8-10 años)</h2>
+                    <label for="question1">Pregunta 1: ¿Cuál es el plural de "flor"?</label>
+                    <input type="text" id="question1" name="question1">
+                    <label for="question2">Pregunta 2: ¿Qué palabra rima con "cielo"?</label>
+                    <input type="text" id="question2" name="question2">
+                    <button class="btn" onclick="nextMath8to10()">Siguiente</button>
+                `;
+            } else if (age >= 11 && age <= 14) {
+                questionsHtml += `
+                    <h2>Español (11-14 años)</h2>
+                    <label for="question1">Pregunta 1: Define el término "sinónimo".</label>
+                    <input type="text" id="question1" name="question1">
+                    <label for="question2">Pregunta 2: ¿Cuál es el antónimo de "feliz"?</label>
+                    <input type="text" id="question2" name="question2">
+                    <button class="btn" onclick="nextMath11to14()">Siguiente</button>
+                `;
+            }
+
             document.body.innerHTML = `
                 <div class="container">
                     <div class="left"></div>
                     <div class="right">
-                        <h2>Questionnaire</h2>
-                        <p>Edad: ${age}</p>
-                        <label for="question1">Question 1: What is the capital of France?</label>
-                        <input type="text" id="question1" name="question1">
-                        <label for="question2">Question 2: Who wrote 'To Kill a Mockingbird'?</label>
-                        <input type="text" id="question2" name="question2">
-                        <label for="question3">Question 3: What is the largest planet in our solar system?</label>
+                        ${questionsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        function nextMath5to7() {
+            document.body.innerHTML = `
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Matemáticas (5-7 años)</h2>
+                        <label for="question3">Pregunta 3: ¿Cuánto es 2 + 3?</label>
                         <input type="text" id="question3" name="question3">
-                        <button class="btn" onclick="nextPage1()">Next</button>
-                    </div>
-                </div>
-            `;
-        }
-
-        function nextPage1() {
-            document.body.innerHTML = `
-                <div class="container">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h2>Questionnaire</h2>
-                        <label for="question4">Question 4: What is the chemical symbol for water?</label>
+                        <label for="question4">Pregunta 4: ¿Cuál es el siguiente número después de 4?</label>
                         <input type="text" id="question4" name="question4">
-                        <label for="question5">Question 5: Who painted the Mona Lisa?</label>
-                        <input type="text" id="question5" name="question5">
-                        <label for="question6">Question 6: What is the smallest country in the world?</label>
-                        <input type="text" id="question6" name="question6">
-                        <button class="btn" onclick="nextPage2()">Next</button>
+                        <button class="btn" onclick="nextEnglish5to7()">Siguiente</button>
                     </div>
                 </div>
             `;
         }
 
-        function nextPage2() {
+        function nextMath8to10() {
             document.body.innerHTML = `
                 <div class="container">
                     <div class="left"></div>
                     <div class="right">
-                        <h2>Questionnaire</h2>
-                        <label for="question7">Question 7: What is the speed of light?</label>
-                        <input type="text" id="question7" name="question7">
-                        <label for="question8">Question 8: Who discovered penicillin?</label>
-                        <input type="text" id="question8" name="question8">
-                        <label for="question9">Question 9: What is the tallest mountain in the world?</label>
-                        <input type="text" id="question9" name="question9">
-                        <button class="btn" onclick="submitQuestionnaire()">Submit</button>
+                        <h2>Matemáticas (8-10 años)</h2>
+                        <label for="question3">Pregunta 3: ¿Cuánto es 7 x 3?</label>
+                        <input type="text" id="question3" name="question3">
+                        <label for="question4">Pregunta 4: ¿Cuánto es 12 ÷ 4?</label>
+                        <input type="text" id="question4" name="question4">
+                        <button class="btn" onclick="nextEnglish8to10()">Siguiente</button>
                     </div>
                 </div>
             `;
         }
+
+        function nextMath11to14() {
+            document.body.innerHTML = `
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Matemáticas (11-14 años)</h2>
+                        <label for="question3">Pregunta 3: Resuelve la ecuación: 2x + 3 = 11.</label>
+                        <input type="text" id="question3" name="question3">
+                        <label for="question4">Pregunta 4: ¿Cuál es el valor de la raíz cuadrada de 81?</label>
+                        <input type="text" id="question4" name="question4">
+                        <button class="btn" onclick="nextEnglish11to14()">Siguiente</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function nextEnglish5to7() {
+            document.body.innerHTML = `
+                <div class="container">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Inglés (5-7 años)</h2>
+                        <label for="question5">Pregunta 5: ¿Cómo se dice "gato" en inglés?</label>
+                        <input type="text" id="question5" name="question5">
+                        <button class="btn" onclick="submitQuestionnaire()">Finalizar</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Similar next functions for English for other age ranges...
 
         function submitQuestionnaire() {
-            alert("Questionnaire submitted!");
+            alert("¡Examen enviado! Gracias por participar.");
         }
     </script>
 </head>
@@ -150,9 +201,9 @@
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre">
             <label for="edad">Edad</label>
-            <input type="number" id="edad" name="edad" min="0">
+            <input type="number" id="edad" name="edad" min="5" max="14">
             <button class="btn" onclick="startForms()">Iniciar Examen</button>
-            <p class="terms">¿Alguna duda? Contactanos o visita nuestro <a href="https://sites.google.com/d/1mQtmyprQxHqnBeRqm5x-IiGUkIRkD_6O/p/1D9PS-yY9EqLEr1WWDNHlsqFTyXWSV1w0/edit">centro de ayuda</a></p>
+            <p class="terms">¿Alguna duda? Contactanos o visita nuestro <a href="#">centro de ayuda</a></p>
         </div>
     </div>
 </body>
