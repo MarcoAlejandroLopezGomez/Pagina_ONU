@@ -112,88 +112,159 @@
                     <input type="text" id="question2" name="question2">
                     <button class="btn" onclick="nextMath11to14()">Siguiente</button>
                 `;
+            } else if (age >= 15 && age <= 18) {
+                questionsHtml += `
+                    <h2>Español (15-18 años)</h2>
+                    <label for="question1">Pregunta 1: ¿Qué figura retórica se utiliza en la siguiente frase?
+"Tus ojos son dos luceros que iluminan la noche.".</label>
+                    <input type="text" id="question1" name="question1">
+                    <label for="question2">Pregunta 2:  ¿Qué tipo de texto es una noticia publicada en un periódico?</label>
+                    <input type="text" id="question2" name="question2">
+                    <button class="btn" onclick="nextMath15to18()">Siguiente</button>
+                `;
             }
 
-            document.body.innerHTML = `
-                <div class="container">
-                    <div class="left"></div>
-                    <div class="right">
-                        ${questionsHtml}
-                    </div>
-                </div>
-            `;
-        }
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            ${questionsHtml}
+        </div>
+    </div>
+`;
+}
 
-        function nextMath5to7() {
-            document.body.innerHTML = `
-                <div class="container">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h2>Matemáticas (5-7 años)</h2>
-                        <label for="question3">Pregunta 3: ¿Cuánto es 2 + 3?</label>
-                        <input type="text" id="question3" name="question3">
-                        <label for="question4">Pregunta 4: ¿Cuál es el siguiente número después de 4?</label>
-                        <input type="text" id="question4" name="question4">
-                        <button class="btn" onclick="nextEnglish5to7()">Siguiente</button>
-                    </div>
-                </div>
-            `;
-        }
+function nextMath5to7() {
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Matemáticas (5-7 años)</h2>
+            <label for="question3">Pregunta 3: ¿Cuánto es 2 + 3?</label>
+            <input type="text" id="question3" name="question3">
+            <label for="question4">Pregunta 4: ¿Cuál es el siguiente número después de 4?</label>
+            <input type="text" id="question4" name="question4">
+            <button class="btn" onclick="nextEnglish5to7()">Siguiente</button>
+        </div>
+    </div>
+`;
+}
 
-        function nextMath8to10() {
-            document.body.innerHTML = `
-                <div class="container">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h2>Matemáticas (8-10 años)</h2>
-                        <label for="question3">Pregunta 3: ¿Cuánto es 7 x 3?</label>
-                        <input type="text" id="question3" name="question3">
-                        <label for="question4">Pregunta 4: ¿Cuánto es 12 ÷ 4?</label>
-                        <input type="text" id="question4" name="question4">
-                        <button class="btn" onclick="nextEnglish8to10()">Siguiente</button>
-                    </div>
-                </div>
-            `;
-        }
+function nextMath8to10() {
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Matemáticas (8-10 años)</h2>
+            <label for="question3">Pregunta 3: ¿Cuánto es 7 x 3?</label>
+            <input type="text" id="question3" name="question3">
+            <label for="question4">Pregunta 4: ¿Cuánto es 12 ÷ 4?</label>
+            <input type="text" id="question4" name="question4">
+            <button class="btn" onclick="nextEnglish8to10()">Siguiente</button>
+        </div>
+    </div>
+`;
+}
 
-        function nextMath11to14() {
-            document.body.innerHTML = `
-                <div class="container">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h2>Matemáticas (11-14 años)</h2>
-                        <label for="question3">Pregunta 3: Resuelve la ecuación: 2x + 3 = 11.</label>
-                        <input type="text" id="question3" name="question3">
-                        <label for="question4">Pregunta 4: ¿Cuál es el valor de la raíz cuadrada de 81?</label>
-                        <input type="text" id="question4" name="question4">
-                        <button class="btn" onclick="nextEnglish11to14()">Siguiente</button>
-                    </div>
-                </div>
-            `;
-        }
+function nextMath11to14() {
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Matemáticas (11-14 años)</h2>
+            <label for="question3">Pregunta 3: Resuelve la ecuación: 2x + 3 = 11.</label>
+            <input type="text" id="question3" name="question3">
+            <label for="question4">Pregunta 4: ¿Cuál es el valor de la raíz cuadrada de 81?</label>
+            <input type="text" id="question4" name="question4">
+            <button class="btn" onclick="nextEnglish11to14()">Siguiente</button>
+        </div>
+    </div>
+`;
+}
 
-        function nextEnglish5to7() {
-            document.body.innerHTML = `
-                <div class="container">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h2>Inglés (5-7 años)</h2>
-                        <label for="question5">Pregunta 5: ¿Cómo se dice "gato" en inglés?</label>
-                        <input type="text" id="question5" name="question5">
-                        <button class="btn" onclick="submitQuestionnaire()">Finalizar</button>
-                    </div>
-                </div>
-            `;
-        }
+function nextMath15to18() {
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Matemáticas (15-18 años)</h2>
+            <label for="question3">Pregunta 3: Si un triángulo rectángulo tiene un ángulo de 30, ¿cuánto mide el lado opuesto si la hipotenusa mide 10 unidades?.</label>
+            <input type="text" id="question3" name="question3">
+            <label for="question4">Pregunta 4: ¿Cuál es el valor de la raíz cuadrada de 81?</label>
+            <input type="text" id="question4" name="question4">
+            <button class="btn" onclick="nextEnglish15to18()">Siguiente</button>
+        </div>
+    </div>
+`;
+}
 
-        // Similar next functions for English for other age ranges...
+function nextEnglish5to7() {
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Inglés (5-7 años)</h2>
+            <label for="question5">Pregunta 5: ¿Cómo se dice "gato" en inglés?</label>
+            <input type="text" id="question5" name="question5">
+            <button class="btn" onclick="submitQuestionnaire()">Finalizar</button>
+        </div>
+    </div>
+`;
+}
 
-        function submitQuestionnaire() {
-            alert("¡Examen enviado! Gracias por participar.");
-        }
-    </script>
+function nextEnglish8to10() {
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Inglés (8-10 años)</h2>
+            <label for="question5">Pregunta 5: What is the plural of mouse?</label>
+            <input type="text" id="question5" name="question5">
+            <button class="btn" onclick="submitQuestionnaire()">Finalizar</button>
+        </div>
+    </div>
+`;
+}
+
+function nextEnglish11to14() {
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Inglés (11-14 años)</h2>
+            <label for="question5">Pregunta 5: Fill in the blank: "The book is ___ the table."</label>
+            <input type="text" id="question5" name="question5">
+            <button class="btn" onclick="submitQuestionnaire()">Finalizar</button>
+        </div>
+    </div>
+`;
+}
+
+function nextEnglish15to18() {
+document.body.innerHTML = `
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Inglés (15-18 años)</h2>
+            <label for="question5">Pregunta 5: Rewrite this sentence in the passive voice: "The chef cooked a delicious meal."</label>
+            <input type="text" id="question5" name="question5">
+            <button class="btn" onclick="submitQuestionnaire()">Finalizar</button>
+        </div>
+    </div>
+`;
+}
+// Similar next functions for English for other age ranges...
+
+function submitQuestionnaire() {
+alert("¡Examen enviado! Gracias por participar.");
+}
+</script>
 </head>
 <body>
+    <div style="position: absolute; top: 20px; right: 20px; color: white; font-size: 1.2em;">
+        <strong>AprendoYA</strong><br>
+        <em>Desarrollado por EducaTech MX</em>
+    </div>
     <div class="container">
         <div class="left"></div>
         <div class="right">
@@ -201,9 +272,9 @@
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre">
             <label for="edad">Edad</label>
-            <input type="number" id="edad" name="edad" min="5" max="14">
+            <input type="number" id="edad" name="edad" min="0">
             <button class="btn" onclick="startForms()">Iniciar Examen</button>
-            <p class="terms">¿Alguna duda? Contactanos o visita nuestro <a href="#">centro de ayuda</a></p>
+            <p class="terms">¿Alguna duda? Contactanos o visita nuestro <a href="https://sites.google.com/d/1mQtmyprQxHqnBeRqm5x-IiGUkIRkD_6O/p/1D9PS-yY9EqLEr1WWDNHlsqFTyXWSV1w0/edit">centro de ayuda</a></p>
         </div>
     </div>
 </body>
